@@ -1,40 +1,47 @@
 from sentence_transformers import SentenceTransformer, util
-import json
 import os
+import json
 
-# Load the embedding model
-embedder = SentenceTransformer('all-MiniLM-L6-v2')
+# Load a more accurate model for better semantic similarity
+model = SentenceTransformer('sentence-transformers/all-mpnet-base-v2')
 
-def load_existing_notes(path='data/notes.json'):
-    if not os.path.exists(path):
+# Sample notes database path
+NOTES_PATH = "data/notes.json"
+
+def get_similar_notes(new_note, top_k=3):
+    # Load existing notes
+    if os.path.exists(NOTES_PATH):
+        with open(NOTES_PATH, "r") as f:
+            notes = json.load(f)
+    else:
         return []
-    with open(path, 'r', encoding='utf-8') as f:
-        return json.load(f)
 
-def get_similar_notes(new_text, top_k=3):
-    """
-    Finds the most semantically similar notes to the new_text.
-    """
-    notes = load_existing_notes()
     if not notes:
         return []
 
-    # Get embeddings
-    new_embedding = embedder.encode(new_text, convert_to_tensor=True)
-    existing_texts = [note['text'] for note in notes]
-    existing_embeddings = embedder.encode(existing_texts, convert_to_tensor=True)
+    # Extract text content
+    existing_texts = [note["text"] for note in notes]
+
+    # Compute embeddings
+    new_embedding = model.encode(new_note, convert_to_tensor=True)
+    existing_embeddings = model.encode(existing_texts, convert_to_tensor=True)
 
     # Compute cosine similarity
     similarities = util.pytorch_cos_sim(new_embedding, existing_embeddings)[0]
-    top_results = similarities.topk(top_k)
 
-    similar_notes = []
-    for score, idx in zip(top_results.values, top_results.indices):
-        note = notes[int(idx)]
-        similar_notes.append({
-            'text': note['text'],
-            'summary': note.get('summary', ''),
-            'score': float(score)
+    # Get top-k similar notes
+    top_results = sorted(
+        zip(range(len(similarities)), similarities),
+        key=lambda x: x[1],
+        reverse=True
+    )[:top_k]
+
+    results = []
+    for idx, score in top_results:
+        results.append({
+            "text": notes[idx]["text"],
+            "summary": notes[idx]["summary"],
+            "score": round(float(score), 2)
         })
 
-    return similar_notes
+    return results
