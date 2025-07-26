@@ -2,10 +2,11 @@ import json
 import os
 from datetime import datetime
 
-from src.summarizer import summarize_text
-from src.tagger import extract_tags
-from src.linker import get_similar_notes
-from src.questioner import generate_questions
+from genbrain_core.summarizer import summarize_text
+from genbrain_core.tagger import extract_tags
+from genbrain_core.linker import get_similar_notes
+from genbrain_core.questioner import generate_questions
+
 
 NOTES_PATH = "data/notes.json"
 

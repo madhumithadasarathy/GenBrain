@@ -48,5 +48,39 @@
         "score": 0.5030577778816223
       }
     ]
+  },
+  {
+    "timestamp": "2025-07-26T20:52:53.592429",
+    "text": "Large language models like ChatGPT are based on the transformer architecture. \nThey are trained on diverse internet data and can perform various NLP tasks including summarization, translation, Q&A, and more.",
+    "summary": "We've been working on a new language learning system that can learn a wide range of languages.",
+    "tags": [
+      "They",
+      "diverse internet data",
+      "ChatGPT",
+      "various NLP tasks",
+      "Q&A"
+    ],
+    "questions": [
+      "What is the transformer architecture based on?",
+      "What is the transformer architecture?",
+      "What is the transformer architecture based upon?"
+    ],
+    "related_notes": [
+      {
+        "text": "Large language models like ChatGPT are based on the transformer architecture. \nThey are trained on diverse internet data and can perform various NLP tasks including summarization, translation, Q&A, and more.",
+        "summary": "Large language models like ChatGPT are based on the transformer architecture. They are trained on diverse internet data and can perform various NLP tasks including summarization, translation, Q&A, and more.",
+        "score": 1.0000001192092896
+      },
+      {
+        "text": "Transformers are a type of deep learning model that use self-attention to process data. They are widely used in NLP tasks like translation and summarization.",
+        "summary": "Transformers use self-attention for NLP tasks.",
+        "score": 0.5738317966461182
+      },
+      {
+        "text": "Sentence Transformers can be used to embed text into a vector space for semantic search or similarity matching.",
+        "summary": "Sentence Transformers enable semantic similarity.",
+        "score": 0.5213429927825928
+      }
+    ]
   }
 ]

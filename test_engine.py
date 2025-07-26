@@ -1,4 +1,4 @@
-from src.engine import process_note
+from genbrain_core.engine import process_note
 
 note = """
 Large language models like ChatGPT are based on the transformer architecture. 

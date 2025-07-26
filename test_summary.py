@@ -1,4 +1,4 @@
-from src.summarizer import summarize_text
+from genbrain_core.engine import process_note
 
 # Sample input paragraph
 sample_text = """
