@@ -1,1 +1,21 @@
-[]
+[
+    [
+  {
+    "text": "Transformers are a type of deep learning model that use self-attention to process data. They are widely used in NLP tasks like translation and summarization.",
+    "summary": "Transformers use self-attention for NLP tasks."
+  },
+  {
+    "text": "Generative AI tools like ChatGPT and DALL·E are changing content creation. They can write, generate images, and assist in coding.",
+    "summary": "ChatGPT and DALL·E automate creative tasks."
+  },
+  {
+    "text": "SpaCy is a popular NLP library in Python that supports tokenization, POS tagging, and named entity recognition.",
+    "summary": "spaCy helps with basic NLP functions."
+  },
+  {
+    "text": "Sentence Transformers can be used to embed text into a vector space for semantic search or similarity matching.",
+    "summary": "Sentence Transformers enable semantic similarity."
+  }
+]
+
+]
