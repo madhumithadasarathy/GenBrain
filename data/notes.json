@@ -4,8 +4,8 @@
     "summary": "Transformers use self-attention for NLP tasks."
   },
   {
-    "text": "Generative AI tools like ChatGPT and DALL·E are changing content creation. They can write, generate images, and assist in coding.",
-    "summary": "ChatGPT and DALL·E automate creative tasks."
+    "text": "Generative AI tools like ChatGPT and DALL\u00b7E are changing content creation. They can write, generate images, and assist in coding.",
+    "summary": "ChatGPT and DALL\u00b7E automate creative tasks."
   },
   {
     "text": "SpaCy is a popular NLP library in Python that supports tokenization, POS tagging, and named entity recognition.",
@@ -14,5 +14,39 @@
   {
     "text": "Sentence Transformers can be used to embed text into a vector space for semantic search or similarity matching.",
     "summary": "Sentence Transformers enable semantic similarity."
+  },
+  {
+    "timestamp": "2025-07-26T20:26:08.827748",
+    "text": "Large language models like ChatGPT are based on the transformer architecture. \nThey are trained on diverse internet data and can perform various NLP tasks including summarization, translation, Q&A, and more.",
+    "summary": "Large language models like ChatGPT are based on the transformer architecture. They are trained on diverse internet data and can perform various NLP tasks including summarization, translation, Q&A, and more.",
+    "tags": [
+      "summarization",
+      "Q&A",
+      "translation",
+      "ChatGPT",
+      "NLP"
+    ],
+    "questions": [
+      "What is ChatGPT based on?",
+      "What is ChatGPT?",
+      "What is a transformer architecture?"
+    ],
+    "related_notes": [
+      {
+        "text": "Transformers are a type of deep learning model that use self-attention to process data. They are widely used in NLP tasks like translation and summarization.",
+        "summary": "Transformers use self-attention for NLP tasks.",
+        "score": 0.5738317966461182
+      },
+      {
+        "text": "Sentence Transformers can be used to embed text into a vector space for semantic search or similarity matching.",
+        "summary": "Sentence Transformers enable semantic similarity.",
+        "score": 0.521342933177948
+      },
+      {
+        "text": "Generative AI tools like ChatGPT and DALL\u00b7E are changing content creation. They can write, generate images, and assist in coding.",
+        "summary": "ChatGPT and DALL\u00b7E automate creative tasks.",
+        "score": 0.5030577778816223
+      }
+    ]
   }
 ]
