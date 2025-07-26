@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: genbrain
+Version: 0.1.0
+Summary: AI-powered personal notetaking assistant
+Author-email: Your Name <your.email@example.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: transformers
+Requires-Dist: torch
+Requires-Dist: spacy
+Requires-Dist: sentence-transformers
+Requires-Dist: scikit-learn
+Requires-Dist: numpy
+Requires-Dist: tqdm
+
+# GenBrain
+GenBrain is an AI-powered personal notetaking assistant that helps you summarize, tag, and organize your thoughts. Built with open-source LLMs and NLP tools, it creates a connected knowledge base from raw notes. Fully local, private, and designed for students, developers, and deep thinkers.

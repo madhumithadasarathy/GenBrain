@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+src/genbrain.egg-info/PKG-INFO
+src/genbrain.egg-info/SOURCES.txt
+src/genbrain.egg-info/dependency_links.txt
+src/genbrain.egg-info/requires.txt
+src/genbrain.egg-info/top_level.txt
