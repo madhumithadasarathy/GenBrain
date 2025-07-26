@@ -1,5 +1,4 @@
 [
-    [
   {
     "text": "Transformers are a type of deep learning model that use self-attention to process data. They are widely used in NLP tasks like translation and summarization.",
     "summary": "Transformers use self-attention for NLP tasks."
@@ -16,6 +15,4 @@
     "text": "Sentence Transformers can be used to embed text into a vector space for semantic search or similarity matching.",
     "summary": "Sentence Transformers enable semantic similarity."
   }
-]
-
 ]
