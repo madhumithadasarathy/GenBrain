@@ -1,0 +1,20 @@
+[project]
+name = "genbrain"
+version = "0.1.0"
+description = "AI-powered personal notetaking assistant"
+authors = [{ name = "Your Name", email = "your.email@example.com" }]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "transformers",
+    "torch",
+    "spacy",
+    "sentence-transformers",
+    "scikit-learn",
+    "numpy",
+    "tqdm"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
