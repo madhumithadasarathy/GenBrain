@@ -1,4 +1,4 @@
-from src.linker import get_similar_notes
+from genbrain_core.linker import get_similar_notes
 
 new_note = """
 Transformer-based models are incredibly powerful for processing language.

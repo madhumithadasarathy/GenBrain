@@ -1,12 +1,9 @@
-from src.questioner import generate_questions
+from genbrain_core.questioner import generate_questions
 
-sample_text = """
-Transformers are powerful models that rely on attention mechanisms to model relationships in text. 
-They are used in tasks like summarization, translation, and question answering.
-"""
+summary = "Transformers are deep learning models that use self-attention. They are commonly used in NLP tasks like summarization and translation."
 
-questions = generate_questions(sample_text, num_return_sequences=3)
+questions = generate_questions(summary)
 
 print("❓ Follow-Up Questions:\n")
 for q in questions:
-    print("•", q)
+    print(f"• {q}")
