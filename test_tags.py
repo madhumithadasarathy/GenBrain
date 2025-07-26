@@ -6,4 +6,4 @@ Generative AI like ChatGPT and BERT are trained on huge datasets. These models a
 
 tags = extract_tags(sample_text)
 
-print("🔖 Extracted Tags:", tags)
+print("Extracted Tags:", tags)
