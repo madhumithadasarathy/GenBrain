@@ -17,7 +17,7 @@ def migrate_json_to_chroma():
     with open(NOTES_PATH, "r", encoding="utf-8") as f:
         notes = json.load(f)
     
-    print(f"📦 Migrating {len(notes)} notes to ChromaDB...")
+    print(f"Migrating {len(notes)} notes to ChromaDB...")
     for i, note in enumerate(notes):
         note_id = f"note_{i}_{datetime.now().timestamp()}"
         vector_store.add_note(
@@ -31,7 +31,7 @@ def migrate_json_to_chroma():
         )
     # Rename old file to avoid re-migration
     os.rename(NOTES_PATH, NOTES_PATH + ".bak")
-    print("✅ Migration complete.")
+    print("Migration complete.")
 
 def load_notes():
     # Return notes from ChromaDB in the format the UI expects
@@ -49,7 +49,7 @@ def load_notes():
     return formatted
 
 def process_note(raw_text):
-    print("⚙️ Processing Note...")
+    print("Processing Note...")
 
     summary = summarize_text(raw_text)
     tags = extract_tags(raw_text)
