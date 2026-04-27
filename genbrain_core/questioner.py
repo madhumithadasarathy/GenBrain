@@ -1,14 +1,17 @@
-from transformers import pipeline
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+import torch
 
-# Load the upgraded FLAN-T5 base model
-question_generator = pipeline("text2text-generation", model="google/flan-t5-base")
+model_name = "google/flan-t5-base"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
 def generate_questions(summary, num_return_sequences=3):
     prompt = f"Generate {num_return_sequences} follow-up questions based on this summary:\n{summary}"
     
-    result = question_generator(prompt, max_length=100, num_return_sequences=1, clean_up_tokenization_spaces=True)
+    inputs = tokenizer(prompt, return_tensors="pt")
+    outputs = model.generate(**inputs, max_length=100)
     
-    output = result[0]['generated_text']
+    output = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
     # Split into individual questions (assumes line breaks or bullets)
     questions = [q.strip("• ").strip() for q in output.strip().split('\n') if q.strip()]

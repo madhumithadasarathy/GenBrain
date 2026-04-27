@@ -1,18 +1,18 @@
-from transformers import pipeline
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+import torch
 
-# Use PEGASUS model instead of BART for improved summarization
-summarizer = pipeline("summarization", model="google/pegasus-xsum")
+model_name = "google/pegasus-xsum"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
 def summarize_text(text, max_length=100):
     """
-    Summarizes the input text using the PEGASUS summarizer.
-
-    Args:
-        text (str): The input text to summarize.
-        max_length (int): Maximum number of tokens in the summary.
-
-    Returns:
-        str: The generated summary.
+    Summarizes the input text using the PEGASUS model directly.
     """
-    result = summarizer(text, max_length=max_length, clean_up_tokenization_spaces=True)
-    return result[0]["summary_text"]
+    inputs = tokenizer(text, truncation=True, padding="longest", return_tensors="pt")
+    
+    # Generate summary
+    summary_ids = model.generate(inputs["input_ids"], max_length=max_length, num_beams=4, length_penalty=2.0, early_stopping=True)
+    
+    summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
+    return summary
