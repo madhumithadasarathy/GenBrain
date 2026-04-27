@@ -4,7 +4,7 @@ from transformers import pipeline
 question_generator = pipeline("text2text-generation", model="google/flan-t5-base")
 
 def generate_questions(summary, num_return_sequences=3):
-    prompt = f"Generate {max_questions} follow-up questions based on this summary:\n{summary}"
+    prompt = f"Generate {num_return_sequences} follow-up questions based on this summary:\n{summary}"
     
     result = question_generator(prompt, max_length=100, num_return_sequences=1, clean_up_tokenization_spaces=True)
     
